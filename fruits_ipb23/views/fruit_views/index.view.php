@@ -2,7 +2,7 @@
 
 <body>
     <h1>Augļi</h1>
-    <?htmlspecialchars($fruits["name"])?>
+    <?htmlspecialchars($fruit["name"])?>
  <form>
  <input name='search_query' value = '<?= $_GET["search_query"] ??""?>'name='name' >
 
@@ -10,14 +10,13 @@
 
 </form>
 
-<?php if(count($fruits) == 0  ){?>
-    <p> "Not found"</p>
-}<?php } ?>
+<?php if(count($fruit) == 0  ){?>
+    <p> Not found</p>
+<?php } ?>
 
 
 <ul>
-<?php foreach($fruits as $fruits) { ?>
-     <li><a href ="show?id=<?=$fruits["id"]?>"> <?=  $fruits["name"]  ?></li>
-} <?php } ?>
+<?php foreach($fruit as $fruit) { ?>
+     <li><a href ="show?id=<?=$fruit["id"]?>"> <?=  $fruit["name"]  ?></li>} <?php } ?>
 </ul>
 <?php require "views/components/footer.php";?>

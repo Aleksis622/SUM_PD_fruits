@@ -3,15 +3,15 @@
 $select = "SELECT * FROM fruits";
 $params = [];
 
-if(isset($_GET["search_query"]) && $_POST["search_query"] !=""){
+if(isset($_GET["search_query"]) && !empty($_GET["search_query"])){
 
 $search_query = "%" . $_GET["search_query"] . "%"; 
 
-$select .=" WHERE name LIKE: nosaukums"; 
+$select .=" WHERE name LIKE :nosaukums"; 
 
 $params = ["nosaukums"=>$search_query] ;
 }
-$fruits = $db->query($select, $params)->fetchAll();
+$fruit = $db->query($select, $params)->fetchAll();
 
 
 
@@ -20,4 +20,4 @@ $fruits = $db->query($select, $params)->fetchAll();
 
 
 
-require "views/posts/index.view.php";
+require "views/fruit_views/index.view.php";

@@ -15,7 +15,7 @@ if(!$fruit){
 }
 
 
-require "views/posts/show.view.php";
+require "views/fruit_views/show.view.php";
 
 
 
